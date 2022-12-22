@@ -25,9 +25,7 @@ export const refreshToken = async (req, res) => {
         const air = user[0].air;
         const keamanan = user[0].keamanan;
         const kebersihan = user[0].kebersihan;
-        const total = user[0].total;
         const status = user[0].status;
-
         const accessToken = jwt.sign(
           {
             userId,
@@ -40,7 +38,6 @@ export const refreshToken = async (req, res) => {
             air,
             keamanan,
             kebersihan,
-            total,
             status,
           },
           process.env.ACCESS_TOKEN_SECRET,

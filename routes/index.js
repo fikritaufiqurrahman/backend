@@ -25,6 +25,12 @@ import {
   deleteNews,
 } from "../controllers/NewsController.js";
 
+import {
+  getProofOfPayment,
+  uploadProofOfPayment,
+  deleteProofOfPayment,
+} from "../controllers/ProofOfPayment.js";
+
 import { verifyToken } from "../middleware/VerifyToken.js";
 import { refreshToken } from "../controllers/RefreshToken.js";
 const router = express.Router();
@@ -45,6 +51,10 @@ router.get("/pembayaran", getDataPembayaran);
 router.patch("/pembayaran/:id", updatePembayaran);
 router.get("/update-pembayaran", getHargaById);
 router.patch("/updateharga-pembayaran/:id", updateHarga);
+
+router.get("/buktipembayaran/:id", getProofOfPayment);
+router.patch("/buktipembayaran/:id", uploadProofOfPayment);
+router.delete("/buktipembayaran/:id", deleteProofOfPayment);
 
 router.get("/news", getNews);
 router.get("/news/:id", getNewsById);

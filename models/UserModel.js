@@ -13,13 +13,16 @@ const Users = db.define(
     no_rumah: DataTypes.STRING,
     refresh_token: DataTypes.TEXT,
     air: DataTypes.STRING,
-    keamanan: DataTypes.STRING,
-    kebersihan: DataTypes.STRING,
     total: DataTypes.STRING,
     status: DataTypes.STRING,
+    image: DataTypes.STRING,
+    url: DataTypes.STRING,
   },
   {
     freezeTableName: true,
   }
 );
 export default Users;
+(async () => {
+  await db.sync();
+})();
